@@ -8,7 +8,7 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
-	"github.com/Bnei-Baruch/jukfs/utils"
+	"github.com/Bnei-Baruch/jukfs/pkg/config"
 )
 
 var cfgFile string
@@ -31,7 +31,7 @@ func init() {
 }
 
 func initConfig() {
-	if err := utils.InitConfig(cfgFile, ""); err != nil {
+	if err := config.InitConfig(cfgFile, ""); err != nil {
 		panic(errors.Wrapf(err, "Could not read config, using: %s", viper.ConfigFileUsed()))
 	}
 }

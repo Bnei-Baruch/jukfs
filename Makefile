@@ -1,6 +1,6 @@
 GO_FILES      = $(shell find . -path ./vendor -prune -o -type f -name "*.go" -print)
 IMPORT_PATH   = $(shell pwd | sed "s|^$(GOPATH)/src/||g")
-LDFLAGS       = -w -X $(IMPORT_PATH)/version.PreRelease=$(PRE_RELEASE)
+LDFLAGS       = -w -X $(IMPORT_PATH)/pkg/version.PreRelease=$(PRE_RELEASE)
 
 build: clean
 	@go build -ldflags '$(LDFLAGS)'

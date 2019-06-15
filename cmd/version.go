@@ -2,10 +2,9 @@ package cmd
 
 import (
 	"fmt"
+	"github.com/Bnei-Baruch/jukfs/pkg/version"
 
 	"github.com/spf13/cobra"
-
-	"github.com/Bnei-Baruch/jukfs/version"
 )
 
 var versionCmd = &cobra.Command{
